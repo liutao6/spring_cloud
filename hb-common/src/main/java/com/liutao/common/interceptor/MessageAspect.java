@@ -1,6 +1,6 @@
 package com.liutao.common.interceptor;
 
-import com.liutao.common.model.response.ResModel;
+import com.liutao.common.model.response.BaseResponse;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -25,10 +25,10 @@ public class MessageAspect {
     @Around("execution(* com.liutao.*.controller..*.*(..))")
     public Object addMsg(ProceedingJoinPoint pjp) throws Throwable {
         Object obj = pjp.proceed();
-        if (obj instanceof ResModel) {
-            ResModel resModel = (ResModel) obj;
-            resModel.setMsg(messageSource.getMessage(resModel.getCode() + "", null, "不识别的错误码，请联系服务器！", Locale.SIMPLIFIED_CHINESE));
-            return resModel;
+        if (obj instanceof BaseResponse) {
+            BaseResponse baseResponse = (BaseResponse) obj;
+            baseResponse.setMsg(messageSource.getMessage(baseResponse.getCode() + "", null, "不识别的错误码，请联系服务器！", Locale.SIMPLIFIED_CHINESE));
+            return baseResponse;
         }
         return obj;
     }

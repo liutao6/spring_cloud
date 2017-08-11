@@ -1,4 +1,4 @@
-package com.liutao.user.dao.mapper;
+package com.liutao.sys.dao.mapper;
 
 
 /**
@@ -6,6 +6,6 @@ package com.liutao.user.dao.mapper;
  * Date: 2017/8/10
  * Time: 下午3:46
  */
-public interface UsersMapper{
+public interface CityMapper{
 
 }

@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.liutao</groupId>
-    <artifactId>hb-user</artifactId>
+    <artifactId>hb-sys</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>hb-user</name>
+    <name>hb-sys</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -69,11 +69,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
-        <!-- spring-cloud-starter-feign：feign模块 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
 
 
@@ -139,6 +134,4 @@
         </plugins>
 
     </build>
-
-
 </project>

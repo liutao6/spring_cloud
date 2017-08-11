@@ -1,4 +1,4 @@
-package com.liutao.user.base;
+package com.liutao.sys.base;
 
 import com.liutao.common.exception.CommonGlobalExceptionHandler;
 import com.liutao.common.model.response.BaseResponse;

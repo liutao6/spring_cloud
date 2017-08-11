@@ -1,10 +1,13 @@
 package com.liutao.user.controller;
 
-import com.liutao.common.model.response.ResModel;
+import com.liutao.common.model.response.BaseResponse;
+import com.liutao.user.feign.HBSysFeignClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -18,11 +21,13 @@ import org.springframework.web.bind.annotation.*;
 @Api(description = "验证码相关接口")
 public class CaptchaController {
 
+    @Resource
+    private HBSysFeignClient hbSysFeignClient;
 
     @PostMapping(value = "apply")
     @ApiOperation(value = "申请 手机/邮箱 验证码")
-    public ResModel applyCaptcha(){
-        return ResModel.ok();
+    public BaseResponse applyCaptcha(){
+        return hbSysFeignClient.get();
 
     }
 }

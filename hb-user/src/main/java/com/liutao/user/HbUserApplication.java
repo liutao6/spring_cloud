@@ -1,14 +1,17 @@
 package com.liutao.user;
 
 import com.liutao.common.interceptor.MessageAspect;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-@SpringBootApplication
-public class UserApplication extends WebMvcConfigurerAdapter {
+@SpringCloudApplication
+@EnableFeignClients
+@MapperScan(basePackages = {"com.liutao.user.dao.mapper"})
+public class HbUserApplication{
 
 
 	@Bean
@@ -25,6 +28,6 @@ public class UserApplication extends WebMvcConfigurerAdapter {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserApplication.class, args);
+		SpringApplication.run(HbUserApplication.class, args);
 	}
 }
