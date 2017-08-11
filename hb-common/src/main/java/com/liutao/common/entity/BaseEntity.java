@@ -9,9 +9,11 @@ import java.util.Date;
 @Data
 public class BaseEntity {
     @Id
-    @GeneratedValue(generator = "JDBC")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String remark;
+    @Column(insertable = false, updatable = false)
     private Date createTime;
+    @Column(insertable = false, updatable = false)
     private Date updateTime;
 }

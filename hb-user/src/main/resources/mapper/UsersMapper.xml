@@ -15,13 +15,4 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
-
-
-  <select id="asdad" resultType="java.lang.Integer">
-    SELECT COUNT(1) FROM USERS
-  </select>
-
-  <select id="asdasdasda" resultMap="BaseResultMap">
-    SELECT * FROM USERS where id = 1
-  </select>
 </mapper>
