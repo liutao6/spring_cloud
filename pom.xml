@@ -14,6 +14,7 @@
         <module>hb-user</module>
         <module>hb-eureka</module>
         <module>hb-sys</module>
+        <module>hb-zuul</module>
     </modules>
 
     <properties>

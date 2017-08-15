@@ -24,9 +24,11 @@ public class CaptchaController {
     @Resource
     private HBSysFeignClient hbSysFeignClient;
 
-    @PostMapping(value = "apply")
+    @GetMapping(value = "apply")
     @ApiOperation(value = "申请 手机/邮箱 验证码")
-    public BaseResponse applyCaptcha(){
+    public BaseResponse applyCaptcha() throws InterruptedException {
+        log.info("test captcha apply");
+        Thread.sleep(7000L);
         return hbSysFeignClient.get();
 
     }

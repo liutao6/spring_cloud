@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
 @SpringCloudApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"com.liutao.user.feign"})
 @MapperScan(basePackages = {"com.liutao.user.dao.mapper"})
 public class HbUserApplication{
 
